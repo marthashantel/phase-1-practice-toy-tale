@@ -13,3 +13,27 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  fetchToys();
+
+  const toyForm = document.querySelector(".add-toy-form");
+  toyForm.addEventListener("submit", handleNewToySubmit);
+});
+
+function fetchToys() {
+  fetch("http://localhost:3000/toys")
+    .then(res => res.json())
+    .then(toys => {
+      toys.forEach(renderToyCard);
+    });
+}
+
+function fetchToys() {
+  fetch("http://localhost:3000/toys")
+    .then(res => res.json())
+    .then(toys => {
+      toys.forEach(renderToyCard);
+    });
+}
+
